@@ -1,0 +1,10 @@
+<div *ngIf="initialized && !selectedStudent.id">
+  <select #studentSelect (change)="selectStudent(studentSelect.value)">
+    <option>Please choose you</option>
+    <option *ngFor="let student of students"
+            [value]="student.id"
+            [selected]="student.id === selectedStudent.id">
+      {{ student.lastName }}, {{ student.firstName }}
+    </option>
+  </select>
+</div>

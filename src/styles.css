@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+html, body, select, input, textarea, button {
+  font-family: Roboto, sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  padding: 4px 8px;
+}
+
+tbody tr:nth-child(2n) {
+  background-color: rgba(0, 0, 0, .1);
+}

@@ -1,0 +1,27 @@
+<div *ngIf="currentStudent.id && initialized">
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Project</th>
+        <th>Creator</th>
+        <th>First</th>
+        <th>Second</th>
+        <th>Third</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let project of projects">
+        <td>{{ project.category.name }}</td>
+        <td>{{ project.name }}</td>
+        <td>
+          {{ project.creatorFirstName }}
+          {{ project.creatorLastName }}
+        </td>
+        <td><input type="radio" (change)="handleFirst(project.id)" name="first" [checked]="currentStudent.firstId === project.id" [value]="project.id"></td>
+        <td><input type="radio" (change)="handleSecond(project.id)" name="second" [checked]="currentStudent.secondId === project.id" [value]="project.id"></td>
+        <td><input type="radio" (change)="handleThird(project.id)" name="third" [checked]="currentStudent.thirdId === project.id" [value]="project.id"></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
